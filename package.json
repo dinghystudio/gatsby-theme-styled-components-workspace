@@ -1,4 +1,5 @@
 {
+  "name": "gatsby-theme-styled-components",
   "private": true,
   "license": "MIT",
   "scripts": {
