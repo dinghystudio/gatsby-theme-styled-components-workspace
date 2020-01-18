@@ -1,3 +1,12 @@
 import React from "react"
+import styled from "styled-components"
 
-export default () => <div>Homepage in a user's site</div>
+const Headline = styled.h1`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.background};
+`
+
+export default () => <div>
+  <Headline>Hello!</Headline>
+  Homepage in a user's site
+</div>
