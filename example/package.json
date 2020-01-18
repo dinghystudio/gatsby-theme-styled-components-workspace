@@ -4,13 +4,14 @@
   "main": "index.js",
   "author": "Daniel J. Becker <daniel@dinghy.studio>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build"
   },
   "dependencies": {
     "gatsby": "^2.18.8",
-    "gatsby-theme-styled-components-config": "^0.1.0",
+    "gatsby-theme-styled-components-config": "*",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
