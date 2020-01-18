@@ -1,14 +1,17 @@
 {
-  "name": "gatsby-theme-styled-components",
+  "name": "gatsby-theme-styled-components-config",
   "version": "0.1.0",
   "main": "index.js",
   "author": "Daniel J. Becker <daniel@dinghy.studio>",
   "license": "MIT",
+  "private": true,
   "peerDependencies": {
     "gatsby": "^2.6.0"
   },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6"
+  },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
     "gatsby-plugin-styled-components": "^3.1.17",
     "styled-components": "^5.0.0"
   }
