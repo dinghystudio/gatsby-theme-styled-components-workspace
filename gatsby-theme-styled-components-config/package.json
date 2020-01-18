@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-styled-components-config",
+  "name": "@dinghystudio/gatsby-theme-styled-components",
   "version": "0.1.0",
   "main": "index.js",
   "author": "Daniel J. Becker <daniel@dinghy.studio>",

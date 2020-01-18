@@ -1,12 +1,12 @@
 {
-  "name": "gatsby-theme-styled-components",
+  "name": "@dinghystudio/gatsby-theme-styled-components-setup",
   "private": true,
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace example build"
   },
   "workspaces": [
-    "gatsby-theme-styled-components-config",
+    "gatsby-theme-styled-components",
     "example"
   ]
 }
