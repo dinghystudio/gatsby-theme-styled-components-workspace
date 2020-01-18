@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-theme-workspace",
+  "name": "gatsby-theme-styled-components-config",
   "private": true,
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "gatsby-theme-styled-components-config/index.js",
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace example build"
