@@ -1,7 +1,5 @@
 {
-  "name": "gatsby-theme-styled-components",
   "private": true,
-  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace example build"
