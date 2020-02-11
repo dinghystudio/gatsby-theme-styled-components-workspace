@@ -26,8 +26,9 @@ Then install this theme in a gatsby page setup:
 mkdir my-site
 cd my-site
 npm init
-# install gatsby-theme-minimal and it's dependencies
+# install gatsby-theme-styled-components and it's dependencies
 npm install gatsby react react-dom @dinghystudio/gatsby-theme-styled-components
+touch gatsby-config.js
 ```
 
 Then add the theme to your `gatsby-config.js`. We'll use the long form
@@ -39,10 +40,11 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
   },
-  plugins: [`@dinghystudio/gatsby-theme-tests-setup`],
+  plugins: [`@dinghystudio/gatsby-theme-styled-components`],
 }
 ```
 
+Add `"develop": "gatsby develop"` to `package.json`’s scripts section.
 That's it, you can now run your gatsby site using
 
 ```shell
