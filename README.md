@@ -1,64 +1,106 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Starter for creating a Gatsby Theme workspace
-</h1>
+# Gatsby Theme Styled Components
+
+
+## Theme Usage
+
+As long as this package is private, you need to add the _@dinghystudio_ registry in a `.npmrc` file:
+
+```
+registry=https://registry.yarnpkg.com/
+
+@dinghystudio:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+always-auth=true
+```
+
+Then `NPM_TOKEN` needs to be exposed as an environment variable (generate that access token via GitHub, see below):
+
+```bash
+# export GitHub access token as NPM_TOKEN
+export NPM_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+Then install this theme in a gatsby page setup:
 
 ```shell
-gatsby new my-theme https://github.com/gatsbyjs/gatsby-starter-theme-workspace
-cd my-theme
-yarn workspace example develop
+mkdir my-site
+cd my-site
+npm init
+# install gatsby-theme-minimal and it's dependencies
+npm install gatsby react react-dom @dinghystudio/gatsby-theme-styled-components
 ```
 
-## Layout
+Then add the theme to your `gatsby-config.js`. We'll use the long form
+here for education purposes.
 
-```text
-.
-├── README.md
-├── gatsby-theme-minimal
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── index.js
-│   └── package.json
-├── example
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── package.json
-│   └── src
-├── package.json
-└── yarn.lock
-
-3 directories, 10 files
+```javascript
+// gatsby-config.js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Default Starter`,
+  },
+  plugins: [`@dinghystudio/gatsby-theme-tests-setup`],
+}
 ```
 
-### `gatsby-theme-minimal`
-
-This directory is the theme package itself. You should rename this at
-some point to be `gatsby-theme-{my-theme-name}`. Also change the
-`package.json` name field and the corresponding dependency in the
-example directory's `package.json`/`gatsby-config.js` to match the chosen name.
-
-- `gatsby-theme-minimal/`
-  - `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
-  - `index.js`: Since themes also function as plugins, this is an empty file that
-    gatsby needs to use this theme as a plugin.
-  - `package.json`: The dependencies that your theme will pull in when people install it. `gatsby` should be a `peerDependency`.
-
-### `example`
-
-This is an example usage of your theme. It should look the same as the
-site of someone who installed and used your theme from npm.
-
-- `example/`
-  - `gatsby-config.js`: Specifies which theme to use and any other one-off config a site might need.
-  - `src/`: Source code such as one-off pages or components that might live in
-    a user's site.
-
-You can run the example with:
+That's it, you can now run your gatsby site using
 
 ```shell
-yarn workspace example develop
+npm run develop
 ```
+
+
+## Usage of styled-components
+
+After installation you should be able to make use of styled-components right away:
+
+```jsx
+// src/pages/index.js
+import React from "react"
+import styled from "styled-components"
+
+const Headline = styled.h1`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.background};
+`
+
+export default () => <div>
+  <Headline>Hello!</Headline>
+  Homepage in a user's site
+</div>
+```
+
+
+## Developement
+
+Use _yarn_ to make use of workspaces:
+
+```shell
+#!/bin/bash
+yarn workspace gatsby-theme-develop
+yarn workspace site
+```
+
+Running the example setup in `/site` by using yarn workspaces:
+
+```shell
+#!/bin/bash
+yarn workspace site develop
+```
+
+
+## Publish
+
+For full descriptions, see [GitHub help](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages).
+
+```shell
+#!/bin/bash
+
+# Change into package directory:
+cd gatsby-theme-tests-setup/
+
+# And publish via:
+NPM_TOKEN="[TOKEN]" NPM_OWNER="[OWNER]" npm publish
+```
+
+Where `TOKEN` can be generated in your [personal profile settings](https://github.com/settings/tokens) and `OWNER` is the organization name **without** the leading _@_ sign.

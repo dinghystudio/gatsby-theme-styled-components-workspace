@@ -1,17 +1,17 @@
 {
+  "private": true,
   "name": "example",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
   "author": "Daniel J. Becker <daniel@dinghy.studio>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^2.18.8",
-    "@dinghystudio/gatsby-theme-styled-components": "*",
+    "gatsby": "^2.19.12",
+    "gatsby-theme-styled-components": "*",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
