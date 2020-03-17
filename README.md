@@ -72,6 +72,51 @@ export default () => <div>
 </div>
 ```
 
+Use [shadowing](https://www.gatsbyjs.org/docs/theme-api/#shadowing) to overwrite `Theme` and `GlobalStyles` which are injected into the side using `wrapRootElement` and `wrapPageElement` respectively.
+
+```js
+// src/@dinghystudio/gatsby-theme-styled-components/style/Theme.js
+const Theme = {
+  colors: {
+    primary: 'blue',
+    background: 'azure',
+    foreground: 'darkblue',
+  },
+}
+
+export default Theme
+```
+
+```js
+// src/@dinghystudio/gatsby-theme-styled-components/style/GlobalStyles.js
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    font-kerning: normal;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+`
+
+export default GlobalStyle
+```
+
 
 ## Developement
 

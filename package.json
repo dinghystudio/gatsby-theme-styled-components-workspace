@@ -7,6 +7,6 @@
   },
   "workspaces": [
     "gatsby-theme-styled-components",
-    "example"
+    "site"
   ]
 }
