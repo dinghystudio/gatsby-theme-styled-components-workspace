@@ -3,24 +3,7 @@
 
 ## Theme Usage
 
-As long as this package is private, you need to add the _@dinghystudio_ registry in a `.npmrc` file:
-
-```
-registry=https://registry.yarnpkg.com/
-
-@dinghystudio:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
-always-auth=true
-```
-
-Then `NPM_TOKEN` needs to be exposed as an environment variable (generate that access token via GitHub, see below):
-
-```bash
-# export GitHub access token as NPM_TOKEN
-export NPM_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Then install this theme in a gatsby page setup:
+Install this theme in a gatsby page setup:
 
 ```shell
 mkdir my-site
