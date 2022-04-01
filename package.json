@@ -1,6 +1,5 @@
 {
   "name": "@dinghystudio/gatsby-theme-styled-components-setup",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace example build"
